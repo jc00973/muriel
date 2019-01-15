@@ -4,7 +4,7 @@ Sistema de locação de veículos, para a disciplina de Programação Orientada 
 
 ## More
 
-Desenvolvido no Eclipse 2018-09, utilizando JSF 2, JPA Hibernate e Tomcat 7.0.92 como servidor web.
+Desenvolvido com Eclipse 2018-09, utilizando JSF 2, JPA Hibernate e Tomcat 7.0.92 como servidor web.
 
 ## Authors
 
