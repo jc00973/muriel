@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Cadastrar moto</title>
+		
+		<h:outputStylesheet library="css" name="sistema.css"/>
+	</h:head>
+	<h:body>
+
+		<h:graphicImage value="/imagens/muriel.png" />
+
+		<h:form id="cm">
+		
+			<h:button value="Pesquisar veículo" outcome="PesquisarVeiculo"/>
+			<h:button value="Cadastrar locadora" outcome="CadastrarLocadora"/>
+			
+			<h:panelGrid columns="2" styleClass="form-grid"
+					columnClasses="label, campo">
+			
+				<h:button value="Alterar tipo do veículo" outcome="CadastrarVeiculo"/>
+				<h:outputLabel value=" "/>
+				
+				<h:outputLabel value="Localização"/>
+				<h:selectOneMenu>
+					<f:selectItem itemValue="Muriel Unidade Aroeira"/>
+					<f:selectItem itemValue="Muriel Unidade Flamboyant"/>
+					<f:selectItem itemValue="Muriel Unidade Rodoviária"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Fabricante"/>
+				<h:selectOneMenu>
+					<f:selectItem itemValue="BMW"/>
+					<f:selectItem itemValue="Honda"/>
+					<f:selectItem itemValue="Hyundai"/>
+					<f:selectItem itemValue="Toyota"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Modelo"/>
+				<h:inputText size="20" label="modelo" />
+				
+				<h:outputLabel value="Ano"/>
+				<h:selectOneMenu>
+					<f:selectItem itemValue="2018"/>
+					<f:selectItem itemValue="2017"/>
+					<f:selectItem itemValue="2016"/>
+					<f:selectItem itemValue="2015"/>
+					<f:selectItem itemValue="2014"/>
+					<f:selectItem itemValue="2013"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Cor"/>
+				<h:selectOneMenu>
+					<f:selectItem itemValue="Preto"/>
+					<f:selectItem itemValue="Cinza"/>
+					<f:selectItem itemValue="Vermelho"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Combustível"/>
+				<h:selectOneMenu>
+					<f:selectItem itemValue="Etanol"/>
+					<f:selectItem itemValue="Gasolina"/>
+					<f:selectItem itemValue="Flex - Etanol/Gasolina"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Capacidade do tanque"/>
+				<h:inputText size="20" label="tanque" />
+				
+				<h:outputLabel value="Valor da diária"/>
+				<h:inputText size="20" label="valorDiaria" />
+				
+				<h:outputLabel value="Câmbio"/>
+				<h:selectOneMenu>
+					<f:selectItem itemValue="Automático"/>
+					<f:selectItem itemValue="Manual"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Cilindradas"/>
+				<h:selectOneMenu>
+					<f:selectItem itemValue="125"/>
+					<f:selectItem itemValue="150"/>
+					<f:selectItem itemValue="180"/>
+					<f:selectItem itemValue="200"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel/>
+				<h:commandButton value="Cadastrar"/>
+			</h:panelGrid>
+						
+		</h:form>
+	</h:body>
+</html>

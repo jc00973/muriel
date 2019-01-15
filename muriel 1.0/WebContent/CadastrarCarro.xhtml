@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Catalogo</title>
+	<h:outputStylesheet library="css" name="sistema.css"/>
+	</h:head>
+	<h:body>
+	
+		<h:graphicImage value="/imagens/muriel.png" />
+	
+		<h:form id="frm">
+		
+			<h:button value="Consultar veículos" outcome="ConsultarCarro"/>
+			<h:button value="Cadastrar locadora" outcome="CadastrarLocadora"/>
+		
+			<h:panelGrid columns="2" styleClass="form-grid" columnClasses="label, campo">
+					
+				<f:facet name="header">
+					Cadastro de novo carro no sistema
+				</f:facet>
+				
+				<h:button value="Alterar tipo do veículo" outcome="CadastrarVeiculo"/>
+				<h:outputLabel value=" "/>
+				
+				<h:outputLabel value="Fabricante"/>
+				<h:selectOneMenu value="#{cadastrarCarroBean.carro.marca}">
+					<f:selectItem itemValue="BMW"/>
+					<f:selectItem itemValue="Chery"/>
+					<f:selectItem itemValue="Citroën"/>
+					<f:selectItem itemValue="Fiat"/>
+					<f:selectItem itemValue="Ford"/>
+					<f:selectItem itemValue="Chevrolet"/>
+					<f:selectItem itemValue="Honda"/>
+					<f:selectItem itemValue="Hyundai"/>
+					<f:selectItem itemValue="Jeep"/>
+					<f:selectItem itemValue="Kia"/>
+					<f:selectItem itemValue="Land Rover"/>
+					<f:selectItem itemValue="Nissan"/>
+					<f:selectItem itemValue="Peugeot"/>
+					<f:selectItem itemValue="Renault"/>
+					<f:selectItem itemValue="Toyota"/>
+					<f:selectItem itemValue="Volkswagen"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Modelo" />
+				<h:inputText size="20" label="modelo" 
+					value="#{cadastrarCarroBean.carro.modelo}"/>
+				
+				<h:outputLabel value="Ano"/>
+				<h:selectOneMenu value="#{cadastrarCarroBean.carro.ano}">
+					<f:selectItem itemValue="2018"/>
+					<f:selectItem itemValue="2017"/>
+					<f:selectItem itemValue="2016"/>
+					<f:selectItem itemValue="2015"/>
+					<f:selectItem itemValue="2014"/>
+					<f:selectItem itemValue="2013"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Cor"/>
+				<h:selectOneMenu value="#{cadastrarCarroBean.carro.cor}">
+					<f:selectItem itemValue="Preto"/>
+					<f:selectItem itemValue="Cinza"/>
+					<f:selectItem itemValue="Branco"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Combustível"/>
+				<h:selectOneMenu value="#{cadastrarCarroBean.carro.combustivel}">
+					<f:selectItem itemValue="Etanol"/>
+					<f:selectItem itemValue="Gasolina"/>
+					<f:selectItem itemValue="Flex - Etanol/Gasolina"/>
+					<f:selectItem itemValue="Diesel"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Capacidade do tanque"/>
+				<h:inputText size="20" label="tanque"
+					value="#{cadastrarCarroBean.carro.tanque}" />
+				
+				<h:outputLabel value="Valor da diária"/>
+				<h:inputText size="20" label="valorDiaria" 
+					value="#{cadastrarCarroBean.carro.valorDiaria}"/>
+				
+				<h:outputLabel value="Câmbio"/>
+				<h:selectOneMenu value="#{cadastrarCarroBean.carro.cambio}">
+					<f:selectItem itemValue="Automatico"/>
+					<f:selectItem itemValue="Manual"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Portas"/>
+				<h:selectOneMenu value="#{cadastrarCarroBean.carro.qtdPorta}">
+					<f:selectItem itemValue="2"/>
+					<f:selectItem itemValue="4"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Motor"/>
+				<h:selectOneMenu value="#{cadastrarCarroBean.carro.motor}">
+					<f:selectItem itemValue="1.0"/>
+					<f:selectItem itemValue="1.4"/>
+					<f:selectItem itemValue="1.6"/>
+					<f:selectItem itemValue="1.8"/>
+					<f:selectItem itemValue="2.0"/>
+				</h:selectOneMenu>
+				
+				<h:outputLabel value="Capacidade do porta malas"/>
+				<h:inputText size="20" label="capacidadePortaMala"
+					value="#{cadastrarCarroBean.carro.capacidadePortaMala}" />		
+				
+				<h:commandButton value="Cadastrar" action="#{cadastrarCarroBean.cadastrar}" color="#CC33CC" />
+			
+			</h:panelGrid>		
+		
+ 		</h:form>
+ 		
+ 		<h:form>
+ 		
+	 		<ol>
+	 			<ui:repeat var="item" value="#{cadastrarCarroBean.carros}" >
+	 				<li>
+	 				#{item.localizacao} - #{item.modelo} - #{item.marca} - #{item.ano} - #{item.cor} - #{item.motor} - #{item.valorDiaria}
+						
+	 				</li>
+	 			</ui:repeat>
+	 		</ol>
+	 		
+	 	</h:form>
+	</h:body>
+</html>

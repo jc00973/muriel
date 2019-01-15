@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>Cadastrar veículo</title>
+		
+		<h:outputStylesheet library="css" name="sistema.css"/>
+	</h:head>
+	<h:body>
+
+		<h:graphicImage value="/imagens/muriel.png" />
+
+		<h:form id="frm">
+		
+			<h:button value="Consultar veículos" outcome="ConsultarCarro"/>
+			<h:button value="Cadastrar veículo" outcome="CadastrarVeiculo"/>
+			
+			<h:panelGrid columns="2" styleClass="form-grid"
+					columnClasses="label, campo">
+			
+				<h:outputLabel value="Nome da unidade"/>
+				<h:inputText size="20" label="nomeUnidade" />
+				
+				<h:outputLabel value="Cidade"/>
+				<h:inputText size="20" label="cidade" />
+				
+				<h:outputLabel value="Estado"/>
+				<h:inputText size="20" label="estado" />
+				
+				<h:outputLabel value="País"/>
+				<h:inputText size="20" label="pais" />
+				
+				<h:outputLabel value="CEP"/>
+				<h:inputText size="20" label="cep" />
+				
+				<h:outputLabel value="Logradouro"/>
+				<h:inputText size="20" label="logradouro" />
+				
+				<h:outputLabel value="Número"/>
+				<h:inputText size="20" label="numero" />
+				
+				<h:outputLabel/>
+				<h:commandButton value="Cadastrar"/>
+			</h:panelGrid>
+			
+		</h:form>
+	</h:body>
+</html>

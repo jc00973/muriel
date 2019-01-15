@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core">
+	
+	<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Catalogo</title>
+	<h:outputStylesheet library="css" name="sistema.css"/>
+	</h:head>
+	<h:body>
+	
+		<h:graphicImage value="/imagens/muriel.png" />
+	
+		<h:form id="frm">
+		
+			<h:button value="Cadastrar veículos" outcome="CadastrarVeiculo"/>
+			<h:button value="Cadastrar locadora" outcome="CadastrarLocadora"/>
+		
+			<h:panelGrid columns="2" styleClass="form-grid" columnClasses="label, campo">
+					
+				<f:facet name="header">
+					Consultar
+				</f:facet>
+	 		
+			 		<ol>
+			 			<ui:repeat var="item" value="#{cadastrarCarroBean.carros}" >
+			 				<li>
+			 				#{item.modelo} - #{item.marca} - #{item.ano} - #{item.cor} - #{item.motor} - #{item.valorDiaria}
+								
+			 				</li>
+			 			</ui:repeat>
+			 		</ol>
+			 		
+			 		<ol>
+			 			<ui:repeat var="item" value="#{cadastrarMotoBean.motos}" >
+			 				<li>
+			 				#{item.codigo} - #{item.modelo} - #{item.marca} - #{item.ano} - #{item.cor} - #{item.valorDiaria}
+								
+			 				</li>
+			 			</ui:repeat>
+			 		</ol>
+	
+			</h:panelGrid>		
+		
+ 		</h:form>
+ 		
+	</h:body>
+</html>
